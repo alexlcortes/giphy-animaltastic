@@ -2,14 +2,14 @@ $(document).ready(function() {
 
 	var animals = ['lion', 'cheetah', 'hippo', 'turtle'];
 
-	function displayAnimals(){
+	function displayAnimals() {
 
 		var animal = $(this).data('name');
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 		$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 
-			var imageUrl = response.data;
+			var results = response.data;
 
 			for (var i = 0; i < results.length; i++) {
 
@@ -23,7 +23,11 @@ $(document).ready(function() {
                     animalDiv.append(p);
                     animalDiv.append(animalImage);
 
-                    $('#gif-results').append(animalDiv);
+                    $('#gif-results').prepend(animalDiv);
+
+                }
+            });
+	}
 
 
 
@@ -35,8 +39,7 @@ $(document).ready(function() {
             // $('#git-results').prepend(animalImage);
 			// $("#gif-results").html(JSON.stringify(response));
 
-		}
-	});
+
 
 	function renderButtons() {
 
@@ -69,7 +72,8 @@ $(document).ready(function() {
 	$(document).on('click', '.new-animal', displayAnimals);
 
 	renderButtons();
-}
+	
+
 
 });
 
