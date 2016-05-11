@@ -1,0 +1,24 @@
+h1 {
+	font-size: 300%;
+	background-color: #f44336;
+	color: white;
+	text-align: center;
+}
+
+.new-animal {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	border-radius: 8px;
+}
+
+#add-animal {
+	background-color: #008CBA;
+	border: none;
+	color: white;
+	border-radius: 8px;
+}
+
+#animal-input {
+	background-color: #e7e7e7;
+}

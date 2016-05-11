@@ -32,7 +32,7 @@ $(document).ready(function() {
 
                 }
             });
-					// return false;
+					return false;
 		}
 
 			// var animalImage = $("<img>");
