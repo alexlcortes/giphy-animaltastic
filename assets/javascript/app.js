@@ -4,14 +4,39 @@ $(document).ready(function() {
 
 	function displayAnimals(){
 
-		var animal = $(this).attr('data-name');
+		var animal = $(this).data('name');
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 		$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
-			$("#gif-results").html(JSON.stringify(response));
 
-		});
-	}
+			var imageUrl = response.data;
+
+			for (var i = 0; i < results.length; i++) {
+
+				    var animalDiv = $('<div>');
+
+                    var p = $('<p>').text("Rating: " + results[i].rating);
+
+                    var animalImage = $('<img>');
+                    animalImage.attr('src', results[i].images.fixed_height.url);
+
+                    animalDiv.append(p);
+                    animalDiv.append(animalImage);
+
+                    $('#gif-results').append(animalDiv);
+
+
+
+
+
+			// var animalImage = $("<img>");
+			// animalImage.attr('src', imageUrl);
+            // animalImage.attr('alt', 'animal image');
+            // $('#git-results').prepend(animalImage);
+			// $("#gif-results").html(JSON.stringify(response));
+
+		}
+	});
 
 	function renderButtons() {
 
@@ -44,6 +69,7 @@ $(document).ready(function() {
 	$(document).on('click', '.new-animal', displayAnimals);
 
 	renderButtons();
+}
 
 });
 
