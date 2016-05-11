@@ -5,7 +5,6 @@
 		<title>Giphymals</title>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 		<script type="text/javascript" src="assets/javascript/app.js"></script>
-		<link rel="stylesheet" href="assets/font-awesome-4.6.2">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
  		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -16,7 +15,10 @@
 	
 		<div class="page-header">
 			<h1>Giphymals <small>animated gif finder</small></h1>
-		</div><br>
+		</div>
+
+		<!-- animal buttons -->
+		<div id="the-buttons"></div><br>
 
 				<!-- add buttons -->
 		<form id="extra-buttons">
@@ -25,18 +27,25 @@
 			<input id="add-animal" type="submit" value="Add Creature">
 		</form><br>
 
-		<!-- animal buttons -->
-		<div id="the-buttons"></div><br>
-
-		<!-- animal gif results -->
-		<div id="gif-results"></div>
-
-		<div id="giphy-logo">
-			<img src="assets/images/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif">
-		</div><br>
+		
+		<div class="row">
+			<!-- animal gif results -->
+			<div id="gif-results" class="col-md-4"></div>
+		</div>
 
 		<footer>
-			<h5>Copyrite 2016 - Alejandro Cortes</h5>
+
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-3"></div>
+				<div class="col-md-3"></div>
+				<div class="col-md-3"><img src="assets/images/PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif"></div>
+			</div>
+
+			<div class="copyright">
+				<h5>Copyrite 2016 - Alejandro Cortes</h5>
+			</div>
+
 		</footer>
 	</div>
 

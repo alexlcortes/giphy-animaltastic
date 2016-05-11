@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
-	var animals = ['lion', 'cheetah', 'hippo', 'turtle'];
+	var animals = ['lion', 'cheetah', 'hippo', 'turtle', 'frog', 'kitty', 'snake', 'alf', 'woof', 'human'];
 
 	function displayAnimals() {
 
 		var animal = $(this).data('name');
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
+		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=5";
 
 		$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 
@@ -74,6 +74,8 @@ $(document).ready(function() {
 
 
 	$('#add-animal').on('click', function(){
+
+
 		
 		var nextAnimal = $('#animal-input').val().trim();
 
