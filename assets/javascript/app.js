@@ -24,6 +24,7 @@ $(document).ready(function() {
                     animalImage.attr('data-animate', results[i].images.fixed_height.url);
                     animalImage.attr('data-state', "still");
                     animalImage.addClass('animalGif');
+
                     animalDiv.append(p);
                     animalDiv.append(animalImage);
 
@@ -31,12 +32,8 @@ $(document).ready(function() {
 
                 }
             });
-					return false;
+					// return false;
 		}
-
-
-
-
 
 			// var animalImage = $("<img>");
 			// animalImage.attr('src', imageUrl);
@@ -54,13 +51,14 @@ $(document).ready(function() {
 
 			var a = $('<button>');
 
-			a.addClass('.new-animal');
+			a.addClass('new-animal');
 			a.attr('data-name', animals[i]);
 			a.attr('id', i);
 			a.text(animals[i]);
 			$('#the-buttons').append(a);
 		}
 	}
+
 
 	function startStop() {
 		var whatEver = $(this).attr('data-state'); 
@@ -87,14 +85,13 @@ $(document).ready(function() {
 
 	});
 
+
 	$(document).on('click', '.new-animal', displayAnimals);
 
 	$(document).on('click', '.animalGif', startStop);
 
 	renderButtons();
 	
-
-
 });
 
 
